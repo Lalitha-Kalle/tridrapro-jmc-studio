@@ -19,7 +19,7 @@
  /* ---------- TOP BAR ---------- */
  .topbar{display:flex;align-items:center;gap:16px;padding:0 16px;height:58px;background:var(--surface);border-bottom:1px solid var(--line);flex-shrink:0;z-index:20}
  .brand{display:flex;align-items:center;gap:9px}
- .brand img{height:34px;width:auto;display:block;flex-shrink:0}
+ .brand img{height:44px;width:auto;display:block;flex-shrink:0}
  .divider{width:1px;height:30px;background:var(--line);margin:0 2px}
 
  .modes{display:flex;background:var(--line-soft);border-radius:10px;padding:3px;gap:2px}
@@ -330,6 +330,6 @@
   body{overflow:auto}.app{height:auto;min-height:100vh}
   .learn{flex-direction:column;padding:12px}
   .deck,.wb{flex:none}.slidebox{min-height:320px}.board-wrap{min-height:320px}
-  .brand img{height:26px}
+  .brand img{height:32px}
   .bandgrid,.qualgrid{grid-template-columns:1fr}
  }
