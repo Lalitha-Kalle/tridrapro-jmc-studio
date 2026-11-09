@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+{% block title %}Chapters{% endblock %}
+{% block body %}
+<div class="row-head"><h1>Chapters</h1><a class="btn gold" href="{{ url_for('admin.new_chapter') }}">+ New chapter</a></div>
+<div class="card excel">
+ <div>
+  <h2>Edit everything in Excel</h2>
+  <p class="muted small">Download the workbook (chapter names, deck links, slides, drills, mock questions), edit the yellow cells, then import it. Importing replaces the slides and questions of every chapter in the file.</p>
+ </div>
+ <div class="excel-actions">
+  <a class="btn ghost" href="{{ url_for('admin.export_excel') }}">⬇ Download Excel</a>
+  <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_excel') }}" class="inline" onsubmit="return confirm('Replace slides and questions for every chapter in this workbook?')">
+   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+   <input type="file" name="xlsx" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+   <button class="btn gold">Import from Excel</button>
+  </form>
+ </div>
+</div>
+<table class="tbl">
+ <thead><tr><th>#</th><th>Chapter</th><th>Slides</th><th>Drills</th><th>Mock</th><th>Deck</th><th>Worksheet</th><th>Results</th></tr></thead>
+ <tbody>
+ {% for c in chapters %}
+  <tr>
+   <td class="muted">{{ c.position }}</td>
+   <td><a href="{{ url_for('admin.edit_chapter', chapter_id=c.id) }}"><b>{{ c.name }}</b></a><div class="muted small">{{ c.subtitle }} · <code>{{ c.slug }}</code></div></td>
+   <td>{{ c.n_slides }}</td>
+   <td>{{ c.n_drills }}</td>
+   <td>{{ c.n_test }}{% if c.n_test != 25 %} <span class="warn" title="A full JMC mock has 25 questions">≠25</span>{% endif %}</td>
+   <td>{{ '✓ Google Slides' if c.deck_url else 'Built-in slides' }}</td>
+   <td>{{ ('✓ ' ~ c.worksheet_pages ~ ' pages') if c.worksheet_file else '—' }}</td>
+   <td>{{ c.n_attempts }}</td>
+  </tr>
+ {% else %}
+  <tr><td colspan="8" class="muted">No chapters yet.</td></tr>
+ {% endfor %}
+ </tbody>
+</table>
+
+<div class="row-head"><h2>Latest results</h2><a href="{{ url_for('admin.attempts') }}">All results →</a></div>
+{% include "admin/_attempts_table.html" %}
+{% endblock %}

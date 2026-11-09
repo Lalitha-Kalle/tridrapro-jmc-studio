@@ -1,0 +1,1616 @@
+[
+ {
+  "slug": "ch1",
+  "name": "Chapter 1",
+  "subtitle": "Rename this chapter",
+  "deck_url": "",
+  "worksheet": "ch1.pdf",
+  "worksheet_pages": 15,
+  "slides": [
+   {
+    "kicker": "JMC Strategy",
+    "heading": "No calculators, <em>no problem</em>",
+    "subtitle": "Every JMC question is built to be solved with pencil, paper and clear thinking.",
+    "bullets": [
+     "Look for a shortcut before you commit to long arithmetic.",
+     "Estimate first — a rough answer rules out silly slips.",
+     "Simplify fractions and factor early; messy numbers are a sign you've missed a trick."
+    ],
+    "note": "TridaPro · Chapter 1 · Slide 1"
+   },
+   {
+    "kicker": "JMC Strategy",
+    "heading": "Every question is worth <em>attempting</em>",
+    "subtitle": "Unlike some challenges, the JMC has no penalty anywhere on the paper — not even the hardest questions.",
+    "bullets": [
+     "An educated guess can only help you — there is never a penalty for a wrong answer.",
+     "Eliminate even one option and a guess becomes a good bet.",
+     "Never leave a question blank if you can rule anything out — it costs nothing to try."
+    ],
+    "note": "TridaPro · Chapter 1 · Slide 2"
+   },
+   {
+    "kicker": "JMC Strategy",
+    "heading": "Work <em>backwards</em> from the answers",
+    "subtitle": "With 5 options on the page, testing them can be faster than solving.",
+    "bullets": [
+     "Multiple choice means the answer is already in front of you — use it.",
+     "Substitute a promising option back into the question and check it fits.",
+     "Start from the middle-sized option; it often narrows the search fastest."
+    ],
+    "note": "TridaPro · Chapter 1 · Slide 3"
+   },
+   {
+    "kicker": "JMC Strategy",
+    "heading": "Manage the <em>60 minutes</em>",
+    "subtitle": "25 questions, roughly 2½ minutes each on average — but not evenly spent.",
+    "bullets": [
+     "Move fast through the questions you recognise; the first 15 should feel quick.",
+     "Bank time early so the harder, higher-value questions get more of it.",
+     "Mark for review and keep moving rather than stalling on one question."
+    ],
+    "note": "TridaPro · Chapter 1 · Slide 4"
+   }
+  ],
+  "drills": [
+   {
+    "stem": "What is 8 + 6 × 3?",
+    "options": [
+     "42",
+     "26",
+     "24",
+     "18",
+     "30"
+    ],
+    "correct": 1,
+    "explanation": "Multiply first: 6×3=18, then 8+18=26."
+   },
+   {
+    "stem": "What is 1/3 + 1/6?",
+    "options": [
+     "1/9",
+     "1/2",
+     "2/9",
+     "5/6",
+     "1/6"
+    ],
+    "correct": 1,
+    "explanation": "Common denominator 6: 2/6 + 1/6 = 3/6 = 1/2."
+   },
+   {
+    "stem": "What is 15% of 60?",
+    "options": [
+     "6",
+     "9",
+     "10",
+     "12",
+     "15"
+    ],
+    "correct": 1,
+    "explanation": "0.15 × 60 = 9."
+   },
+   {
+    "stem": "Which of these is a prime number?",
+    "options": [
+     "21",
+     "27",
+     "33",
+     "37",
+     "39"
+    ],
+    "correct": 3,
+    "explanation": "37 has no factors other than 1 and itself; the rest are all multiples of 3."
+   },
+   {
+    "stem": "If 4x = 28, what is x + 5?",
+    "options": [
+     "7",
+     "10",
+     "12",
+     "16",
+     "33"
+    ],
+    "correct": 2,
+    "explanation": "x = 7, so x + 5 = 12."
+   },
+   {
+    "stem": "What is the perimeter of a rectangle 9 cm by 4 cm?",
+    "options": [
+     "13",
+     "22",
+     "26",
+     "36",
+     "13"
+    ],
+    "correct": 2,
+    "explanation": "Perimeter = 2(9+4) = 26 cm."
+   },
+   {
+    "stem": "What is the remainder when 29 is divided by 6?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "correct": 4,
+    "explanation": "6×4=24, and 29−24=5."
+   },
+   {
+    "stem": "How many degrees are in the angles of a triangle, added together?",
+    "options": [
+     "90",
+     "180",
+     "270",
+     "360",
+     "100"
+    ],
+    "correct": 1,
+    "explanation": "The angles of any triangle sum to 180°."
+   },
+   {
+    "stem": "What is the next number: 3, 7, 11, 15, 19, ...?",
+    "options": [
+     "21",
+     "22",
+     "23",
+     "24",
+     "25"
+    ],
+    "correct": 2,
+    "explanation": "Each term adds 4: 19 + 4 = 23."
+   },
+   {
+    "stem": "A number is doubled, then 5 is subtracted, giving 17. What was the number?",
+    "options": [
+     "6",
+     "7",
+     "8",
+     "11",
+     "22"
+    ],
+    "correct": 3,
+    "explanation": "2n − 5 = 17, so 2n = 22 and n = 11."
+   },
+   {
+    "stem": "A bag has 3 red and 7 blue counters. One is drawn at random. What is P(red)?",
+    "options": [
+     "3/10",
+     "7/10",
+     "1/3",
+     "3/7",
+     "1/10"
+    ],
+    "correct": 0,
+    "explanation": "There are 10 counters in total. P(red) = 3/10."
+   },
+   {
+    "stem": "What is the area of a triangle with base 10 and height 6?",
+    "options": [
+     "16",
+     "30",
+     "32",
+     "60",
+     "16"
+    ],
+    "correct": 1,
+    "explanation": "Area = ½ × base × height = ½ × 10 × 6 = 30."
+   },
+   {
+    "stem": "Which of the following equals 2⁴?",
+    "options": [
+     "8",
+     "12",
+     "16",
+     "32",
+     "64"
+    ],
+    "correct": 2,
+    "explanation": "2⁴ = 2×2×2×2 = 16."
+   },
+   {
+    "stem": "What is the mean of 4, 6, 8, 10, 12?",
+    "options": [
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "correct": 2,
+    "explanation": "Sum = 40, divided by 5 numbers = 8."
+   },
+   {
+    "stem": "How many minutes are there in 1¾ hours?",
+    "options": [
+     "95",
+     "100",
+     "105",
+     "110",
+     "115"
+    ],
+    "correct": 2,
+    "explanation": "1¾ hours = 60 + 45 = 105 minutes."
+   }
+  ],
+  "test": [
+   {
+    "stem": "What is 7 + 4 × 2?",
+    "options": [
+     "22",
+     "15",
+     "13",
+     "11",
+     "18"
+    ],
+    "correct": 1,
+    "explanation": "Multiply first: 4×2=8, then 7+8=15."
+   },
+   {
+    "stem": "How many seconds are in 4 minutes?",
+    "options": [
+     "40",
+     "120",
+     "180",
+     "240",
+     "400"
+    ],
+    "correct": 3,
+    "explanation": "4 × 60 = 240."
+   },
+   {
+    "stem": "What is 2/5 written as a decimal?",
+    "options": [
+     "0.2",
+     "0.25",
+     "0.4",
+     "0.45",
+     "0.5"
+    ],
+    "correct": 2,
+    "explanation": "2 ÷ 5 = 0.4."
+   },
+   {
+    "stem": "Which of these numbers is NOT a factor of 24?",
+    "options": [
+     "2",
+     "3",
+     "5",
+     "6",
+     "8"
+    ],
+    "correct": 2,
+    "explanation": "24 ÷ 5 = 4.8, which is not a whole number, so 5 is not a factor."
+   },
+   {
+    "stem": "A triangle has angles 65° and 55°. What is the third angle?",
+    "options": [
+     "50",
+     "55",
+     "60",
+     "65",
+     "70"
+    ],
+    "correct": 2,
+    "explanation": "180 − 65 − 55 = 60°."
+   },
+   {
+    "stem": "What is the value of 5³?",
+    "options": [
+     "15",
+     "25",
+     "100",
+     "125",
+     "150"
+    ],
+    "correct": 3,
+    "explanation": "5×5×5 = 125."
+   },
+   {
+    "stem": "Simplify 18/24.",
+    "options": [
+     "1/2",
+     "2/3",
+     "3/4",
+     "4/5",
+     "5/6"
+    ],
+    "correct": 2,
+    "explanation": "Divide top and bottom by 6: 18/24 = 3/4."
+   },
+   {
+    "stem": "If x + 8 = 20, what is 3x?",
+    "options": [
+     "12",
+     "24",
+     "30",
+     "36",
+     "60"
+    ],
+    "correct": 3,
+    "explanation": "x = 12, so 3x = 36."
+   },
+   {
+    "stem": "What is the perimeter of a square with side length 13?",
+    "options": [
+     "26",
+     "39",
+     "42",
+     "52",
+     "169"
+    ],
+    "correct": 3,
+    "explanation": "4 × 13 = 52."
+   },
+   {
+    "stem": "How many minutes past 3pm is 3:40pm?",
+    "options": [
+     "30",
+     "35",
+     "40",
+     "45",
+     "50"
+    ],
+    "correct": 2,
+    "explanation": "3:40 is 40 minutes after 3:00."
+   },
+   {
+    "stem": "What is the mode of 2, 4, 4, 5, 5, 5, 9?",
+    "options": [
+     "2",
+     "4",
+     "5",
+     "6",
+     "9"
+    ],
+    "correct": 2,
+    "explanation": "5 appears most often (three times)."
+   },
+   {
+    "stem": "A toy costs $20 and is reduced by 20%. What is the new price?",
+    "options": [
+     "$4",
+     "$12",
+     "$14",
+     "$16",
+     "$18"
+    ],
+    "correct": 3,
+    "explanation": "20% of 20 is 4, so the new price is 20 − 4 = $16."
+   },
+   {
+    "stem": "What is the sum of the first 5 positive integers?",
+    "options": [
+     "10",
+     "12",
+     "15",
+     "18",
+     "20"
+    ],
+    "correct": 2,
+    "explanation": "1+2+3+4+5 = 15."
+   },
+   {
+    "stem": "How many edges does a cube have?",
+    "options": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14"
+    ],
+    "correct": 3,
+    "explanation": "A cube has 12 edges — you can count them along its 6 square faces, each edge shared by two faces."
+   },
+   {
+    "stem": "What is 0.6 × 0.5?",
+    "options": [
+     "0.11",
+     "0.3",
+     "0.35",
+     "3",
+     "30"
+    ],
+    "correct": 1,
+    "explanation": "0.6 × 0.5 = 0.3."
+   },
+   {
+    "stem": "If 2x − 3 = x + 4, what is x?",
+    "options": [
+     "1",
+     "3",
+     "5",
+     "7",
+     "9"
+    ],
+    "correct": 3,
+    "explanation": "Subtract x from both sides: x − 3 = 4, so x = 7."
+   },
+   {
+    "stem": "A ladder's foot is 5 m from a wall and it reaches 12 m up the wall. How long is the ladder?",
+    "options": [
+     "11 m",
+     "12 m",
+     "13 m",
+     "14 m",
+     "15 m"
+    ],
+    "correct": 2,
+    "explanation": "By Pythagoras, √(5²+12²) = √169 = 13 m."
+   },
+   {
+    "stem": "What is the smallest positive integer n for which 3ⁿ > 50?",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "correct": 2,
+    "explanation": "3³ = 27 (too small), 3⁴ = 81 (>50). So n = 4."
+   },
+   {
+    "stem": "A fair coin is tossed twice. What is P(exactly one head)?",
+    "options": [
+     "1/4",
+     "1/2",
+     "3/4",
+     "1/3",
+     "2/3"
+    ],
+    "correct": 1,
+    "explanation": "Four equally likely outcomes: HH, HT, TH, TT. Two of them (HT, TH) have exactly one head. P = 2/4 = 1/2."
+   },
+   {
+    "stem": "The interior angles of a hexagon sum to how many degrees?",
+    "options": [
+     "360",
+     "540",
+     "630",
+     "720",
+     "900"
+    ],
+    "correct": 3,
+    "explanation": "Angle sum = (6−2)×180° = 720°."
+   },
+   {
+    "stem": "If x² = 144 and x > 0, what is x + 2?",
+    "options": [
+     "10",
+     "12",
+     "14",
+     "16",
+     "146"
+    ],
+    "correct": 2,
+    "explanation": "x = 12 (since 12² = 144), so x + 2 = 14."
+   },
+   {
+    "stem": "Two numbers are in the ratio 3:5 and sum to 40. What is the larger number?",
+    "options": [
+     "15",
+     "20",
+     "24",
+     "25",
+     "30"
+    ],
+    "correct": 3,
+    "explanation": "Total parts = 8, one part = 5. Larger = 5×5 = 25."
+   },
+   {
+    "stem": "How many positive factors does 30 have?",
+    "options": [
+     "4",
+     "6",
+     "8",
+     "10",
+     "12"
+    ],
+    "correct": 2,
+    "explanation": "30 = 2×3×5. The number of factors is (1+1)(1+1)(1+1) = 8."
+   },
+   {
+    "stem": "A rectangle's length is three times its width, and its area is 48. What is its width?",
+    "options": [
+     "2",
+     "4",
+     "6",
+     "8",
+     "12"
+    ],
+    "correct": 1,
+    "explanation": "Let width = w, length = 3w. 3w² = 48, so w² = 16, w = 4."
+   },
+   {
+    "stem": "In how many ways can 3 different books be arranged in a row on a shelf?",
+    "options": [
+     "3",
+     "6",
+     "9",
+     "12",
+     "27"
+    ],
+    "correct": 1,
+    "explanation": "There are 3 choices for the first spot, 2 for the second, 1 for the last: 3×2×1 = 6."
+   }
+  ]
+ },
+ {
+  "slug": "ch2",
+  "name": "Chapter 2",
+  "subtitle": "Rename this chapter",
+  "deck_url": "",
+  "worksheet": null,
+  "worksheet_pages": 0,
+  "slides": [
+   {
+    "kicker": "Problem Solving",
+    "heading": "Picture the <em>whole</em>",
+    "subtitle": "Fraction, percentage and ratio questions become far easier with a quick sketch or bar model.",
+    "bullets": [
+     "Draw a simple bar to show parts of a whole before calculating.",
+     "Turn percentages into friendly fractions (25% = 1/4, 10% = 1/10) to calculate in your head.",
+     "Keep units consistent — convert everything to the same unit before comparing."
+    ],
+    "note": "TridaPro · Chapter 2 · Slide 1"
+   },
+   {
+    "kicker": "Problem Solving",
+    "heading": "Find the <em>one part</em>",
+    "subtitle": "Most ratio questions unlock as soon as you know what one part is worth.",
+    "bullets": [
+     "Add the parts of the ratio together to find the total number of parts.",
+     "Divide the known total by the number of parts it represents.",
+     "Multiply back up to find whatever the question actually asks for."
+    ],
+    "note": "TridaPro · Chapter 2 · Slide 2"
+   },
+   {
+    "kicker": "Problem Solving",
+    "heading": "Percentages are just <em>fractions</em>",
+    "subtitle": "Switching between percentage, fraction and decimal form is often the whole trick.",
+    "bullets": [
+     "10% of a number is easy — divide by 10, then scale up or down from there.",
+     "A percentage increase then decrease never cancels out — check the new base each time.",
+     "Sanity-check: a result after a discount should always be smaller than the original."
+    ],
+    "note": "TridaPro · Chapter 2 · Slide 3"
+   },
+   {
+    "kicker": "Problem Solving",
+    "heading": "Check it makes <em>sense</em>",
+    "subtitle": "A two-second reasonableness check catches most careless slips.",
+    "bullets": [
+     "A fraction of a number should never come out bigger than the number itself.",
+     "Percentages describing a part of something should stay within 0–100%.",
+     "Re-read the question once you have an answer, to check it answers what was asked."
+    ],
+    "note": "TridaPro · Chapter 2 · Slide 4"
+   }
+  ],
+  "drills": [
+   {
+    "stem": "What is 2/3 of 18?",
+    "options": [
+     "6",
+     "9",
+     "10",
+     "12",
+     "15"
+    ],
+    "correct": 3,
+    "explanation": "18 ÷ 3 × 2 = 12."
+   },
+   {
+    "stem": "What is 1/4 as a percentage?",
+    "options": [
+     "4%",
+     "14%",
+     "25%",
+     "40%",
+     "44%"
+    ],
+    "correct": 2,
+    "explanation": "1 ÷ 4 = 0.25 = 25%."
+   },
+   {
+    "stem": "Simplify the ratio 15 : 20.",
+    "options": [
+     "1:2",
+     "2:3",
+     "3:4",
+     "4:5",
+     "5:6"
+    ],
+    "correct": 2,
+    "explanation": "Divide both by 5: 15÷5=3, 20÷5=4. Ratio is 3:4."
+   },
+   {
+    "stem": "What is 1/2 + 1/5?",
+    "options": [
+     "2/7",
+     "3/10",
+     "7/10",
+     "3/5",
+     "9/10"
+    ],
+    "correct": 2,
+    "explanation": "Common denominator 10: 5/10 + 2/10 = 7/10."
+   },
+   {
+    "stem": "A $80 jacket is reduced by 10%. What is the sale price?",
+    "options": [
+     "$8",
+     "$64",
+     "$70",
+     "$72",
+     "$76"
+    ],
+    "correct": 3,
+    "explanation": "10% of 80 is 8, so the sale price is 80 − 8 = $72."
+   },
+   {
+    "stem": "What is 3/4 − 1/3?",
+    "options": [
+     "1/12",
+     "5/12",
+     "2/3",
+     "5/7",
+     "1/4"
+    ],
+    "correct": 1,
+    "explanation": "Common denominator 12: 9/12 − 4/12 = 5/12."
+   },
+   {
+    "stem": "Three numbers are in the ratio 1:2:3 and sum to 60. What is the smallest?",
+    "options": [
+     "5",
+     "10",
+     "15",
+     "20",
+     "30"
+    ],
+    "correct": 1,
+    "explanation": "Total parts = 6, one part = 10. Smallest = 1×10 = 10."
+   },
+   {
+    "stem": "What is 120% of 50?",
+    "options": [
+     "50",
+     "55",
+     "60",
+     "65",
+     "70"
+    ],
+    "correct": 2,
+    "explanation": "120% of 50 = 1.2 × 50 = 60."
+   },
+   {
+    "stem": "Write 0.35 as a fraction in its simplest form.",
+    "options": [
+     "35/100",
+     "7/20",
+     "1/3",
+     "3/10",
+     "17/50"
+    ],
+    "correct": 1,
+    "explanation": "0.35 = 35/100, which simplifies (dividing by 5) to 7/20."
+   },
+   {
+    "stem": "A recipe needs flour and sugar in the ratio 5:2. If there are 250 g of flour, how much sugar is needed?",
+    "options": [
+     "50 g",
+     "75 g",
+     "100 g",
+     "125 g",
+     "150 g"
+    ],
+    "correct": 2,
+    "explanation": "5 parts = 250 g, so 1 part = 50 g. Sugar = 2 × 50 = 100 g."
+   },
+   {
+    "stem": "What is 7/8 written as a decimal?",
+    "options": [
+     "0.78",
+     "0.785",
+     "0.825",
+     "0.875",
+     "0.9"
+    ],
+    "correct": 3,
+    "explanation": "7 ÷ 8 = 0.875."
+   },
+   {
+    "stem": "A price increases from $40 to $50. What is the percentage increase?",
+    "options": [
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%"
+    ],
+    "correct": 3,
+    "explanation": "Increase is $10. As a fraction of the original: 10/40 = 25%."
+   },
+   {
+    "stem": "What is 5/6 of 36?",
+    "options": [
+     "24",
+     "28",
+     "30",
+     "32",
+     "34"
+    ],
+    "correct": 2,
+    "explanation": "36 ÷ 6 × 5 = 30."
+   },
+   {
+    "stem": "Two numbers are in the ratio 4:7. If the smaller is 20, what is the larger?",
+    "options": [
+     "28",
+     "32",
+     "35",
+     "40",
+     "42"
+    ],
+    "correct": 2,
+    "explanation": "4 parts = 20, so 1 part = 5. Larger = 7×5 = 35."
+   },
+   {
+    "stem": "What is 2.5 ÷ 0.5?",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "correct": 3,
+    "explanation": "Dividing by 0.5 is the same as multiplying by 2: 2.5 × 2 = 5."
+   }
+  ],
+  "test": [
+   {
+    "stem": "What is 3/8 of 64?",
+    "options": [
+     "16",
+     "20",
+     "24",
+     "28",
+     "32"
+    ],
+    "correct": 2,
+    "explanation": "64 ÷ 8 × 3 = 24."
+   },
+   {
+    "stem": "What is 3/20 as a percentage?",
+    "options": [
+     "3%",
+     "13%",
+     "15%",
+     "20%",
+     "30%"
+    ],
+    "correct": 2,
+    "explanation": "3 ÷ 20 = 0.15 = 15%."
+   },
+   {
+    "stem": "Simplify the ratio 24 : 36.",
+    "options": [
+     "1:2",
+     "2:3",
+     "3:4",
+     "3:5",
+     "4:5"
+    ],
+    "correct": 1,
+    "explanation": "Divide both by 12: 24÷12=2, 36÷12=3."
+   },
+   {
+    "stem": "What is 2/3 + 1/4?",
+    "options": [
+     "3/7",
+     "3/12",
+     "11/12",
+     "5/6",
+     "13/12"
+    ],
+    "correct": 2,
+    "explanation": "Common denominator 12: 8/12 + 3/12 = 11/12."
+   },
+   {
+    "stem": "A $120 bike is reduced by 25%. What is the sale price?",
+    "options": [
+     "$30",
+     "$80",
+     "$90",
+     "$95",
+     "$100"
+    ],
+    "correct": 2,
+    "explanation": "25% of 120 is 30, so the sale price is 120 − 30 = $90."
+   },
+   {
+    "stem": "What is 5/6 − 2/3?",
+    "options": [
+     "1/6",
+     "1/3",
+     "1/2",
+     "3/6",
+     "1/9"
+    ],
+    "correct": 0,
+    "explanation": "Common denominator 6: 5/6 − 4/6 = 1/6."
+   },
+   {
+    "stem": "Three numbers are in the ratio 2:3:5 and sum to 100. What is the largest?",
+    "options": [
+     "20",
+     "30",
+     "40",
+     "50",
+     "60"
+    ],
+    "correct": 3,
+    "explanation": "Total parts = 10, one part = 10. Largest = 5×10 = 50."
+   },
+   {
+    "stem": "What is 140% of 25?",
+    "options": [
+     "30",
+     "32.5",
+     "35",
+     "37.5",
+     "40"
+    ],
+    "correct": 2,
+    "explanation": "140% of 25 = 1.4 × 25 = 35."
+   },
+   {
+    "stem": "Write 0.625 as a fraction in its simplest form.",
+    "options": [
+     "5/8",
+     "3/5",
+     "625/1000",
+     "5/9",
+     "11/16"
+    ],
+    "correct": 0,
+    "explanation": "0.625 = 625/1000, which simplifies to 5/8."
+   },
+   {
+    "stem": "Paint is mixed blue to white in the ratio 3:5. For 15 litres of blue, how much white is needed?",
+    "options": [
+     "20 L",
+     "25 L",
+     "30 L",
+     "35 L",
+     "40 L"
+    ],
+    "correct": 1,
+    "explanation": "3 parts = 15 L, so 1 part = 5 L. White = 5 × 5 = 25 L."
+   },
+   {
+    "stem": "What is 9/16 written as a decimal?",
+    "options": [
+     "0.5",
+     "0.5625",
+     "0.5725",
+     "0.6",
+     "0.625"
+    ],
+    "correct": 1,
+    "explanation": "9 ÷ 16 = 0.5625."
+   },
+   {
+    "stem": "A price falls from $80 to $60. What is the percentage decrease?",
+    "options": [
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "33%"
+    ],
+    "correct": 2,
+    "explanation": "Decrease is $20. As a fraction of the original: 20/80 = 25%."
+   },
+   {
+    "stem": "What is 7/9 of 63?",
+    "options": [
+     "42",
+     "45",
+     "49",
+     "51",
+     "54"
+    ],
+    "correct": 2,
+    "explanation": "63 ÷ 9 × 7 = 49."
+   },
+   {
+    "stem": "Two numbers are in the ratio 5:8. If the larger is 56, what is the smaller?",
+    "options": [
+     "30",
+     "32",
+     "35",
+     "38",
+     "40"
+    ],
+    "correct": 2,
+    "explanation": "8 parts = 56, so 1 part = 7. Smaller = 5×7 = 35."
+   },
+   {
+    "stem": "What is 4.8 ÷ 0.6?",
+    "options": [
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "correct": 2,
+    "explanation": "4.8 ÷ 0.6 = 48 ÷ 6 = 8."
+   },
+   {
+    "stem": "A class has 30 pupils; 40% are boys. How many girls are there?",
+    "options": [
+     "10",
+     "12",
+     "14",
+     "18",
+     "20"
+    ],
+    "correct": 3,
+    "explanation": "40% of 30 is 12 boys, so girls = 30 − 12 = 18."
+   },
+   {
+    "stem": "What is 2 1/3 + 1 1/2 as a mixed number?",
+    "options": [
+     "3 5/6",
+     "3 2/3",
+     "3 3/5",
+     "4 1/6",
+     "3 1/2"
+    ],
+    "correct": 0,
+    "explanation": "7/3 + 3/2 = 14/6 + 9/6 = 23/6 = 3 5/6."
+   },
+   {
+    "stem": "A sum of money is shared in the ratio 2:3:5 and the smallest share is $18. What is the total sum?",
+    "options": [
+     "$72",
+     "$80",
+     "$85",
+     "$90",
+     "$95"
+    ],
+    "correct": 3,
+    "explanation": "2 parts = $18, so 1 part = $9. Total = 10 parts = $90."
+   },
+   {
+    "stem": "What percentage of 1.5 kg is 300 g?",
+    "options": [
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "35%"
+    ],
+    "correct": 1,
+    "explanation": "300 g is 0.3 kg. 0.3/1.5 = 1/5 = 20%."
+   },
+   {
+    "stem": "What is 5/7 of 7/10?",
+    "options": [
+     "1/2",
+     "5/10",
+     "7/14",
+     "1/4",
+     "5/14"
+    ],
+    "correct": 0,
+    "explanation": "(5×7)/(7×10) = 35/70 = 1/2."
+   },
+   {
+    "stem": "A shirt's price is increased by 20% and then decreased by 20%. What is the overall effect on the original price?",
+    "options": [
+     "No change",
+     "4% decrease",
+     "4% increase",
+     "20% decrease",
+     "40% decrease"
+    ],
+    "correct": 1,
+    "explanation": "On $100: +20% gives $120, then −20% of $120 is $24, leaving $96 — a 4% decrease overall."
+   },
+   {
+    "stem": "Two numbers have a ratio 7:4 and a difference of 15. What is the smaller number?",
+    "options": [
+     "15",
+     "18",
+     "20",
+     "21",
+     "24"
+    ],
+    "correct": 2,
+    "explanation": "7 parts − 4 parts = 3 parts = 15, so 1 part = 5. Smaller = 4×5 = 20."
+   },
+   {
+    "stem": "What is 0.04 as a percentage of 0.2?",
+    "options": [
+     "2%",
+     "5%",
+     "15%",
+     "20%",
+     "25%"
+    ],
+    "correct": 3,
+    "explanation": "0.04 / 0.2 = 1/5 = 20%."
+   },
+   {
+    "stem": "A tank is 3/5 full. After 30 litres are added it becomes 9/10 full. What is the tank's capacity?",
+    "options": [
+     "90 L",
+     "100 L",
+     "110 L",
+     "120 L",
+     "130 L"
+    ],
+    "correct": 1,
+    "explanation": "The added 30 L fills 9/10−3/5 = 9/10−6/10 = 3/10 of the tank. So the full tank = 30 ÷ (3/10) = 100 L."
+   },
+   {
+    "stem": "In a class, the ratio of pupils who walk to school to those who don't is 3:7. If 9 pupils walk, how many pupils are in the class?",
+    "options": [
+     "21",
+     "27",
+     "30",
+     "33",
+     "36"
+    ],
+    "correct": 2,
+    "explanation": "3 parts = 9, so 1 part = 3. Total parts = 10, class size = 30."
+   }
+  ]
+ },
+ {
+  "slug": "ch3",
+  "name": "Chapter 3",
+  "subtitle": "Rename this chapter",
+  "deck_url": "",
+  "worksheet": null,
+  "worksheet_pages": 0,
+  "slides": [
+   {
+    "kicker": "Exam Technique",
+    "heading": "Draw the <em>picture</em>",
+    "subtitle": "Geometry and logic questions become far easier once they're on paper.",
+    "bullets": [
+     "Sketch even 'obvious' shapes — hidden relationships often jump out visually.",
+     "Mark every given length and angle directly on your sketch.",
+     "Redraw a cluttered diagram cleanly rather than fighting your own mess."
+    ],
+    "note": "TridaPro · Chapter 3 · Slide 1"
+   },
+   {
+    "kicker": "Exam Technique",
+    "heading": "Know your <em>angle facts</em>",
+    "subtitle": "A handful of facts — angles on a line, in a triangle, around a point — unlock most geometry questions.",
+    "bullets": [
+     "Angles on a straight line add to 180°; angles around a point add to 360°.",
+     "A triangle's angles always sum to 180°; an isosceles triangle has two equal base angles.",
+     "A regular polygon's exterior angles always add up to 360°, whatever the shape."
+    ],
+    "note": "TridaPro · Chapter 3 · Slide 2"
+   },
+   {
+    "kicker": "Exam Technique",
+    "heading": "Count <em>systematically</em>",
+    "subtitle": "'How many ways' questions reward a clear, organised count over guesswork.",
+    "bullets": [
+     "List possibilities in a consistent order so you don't double-count or miss any.",
+     "Break a big count into smaller, multiplied stages — choices for each position.",
+     "If a direct count looks hard, try counting what you don't want and subtracting."
+    ],
+    "note": "TridaPro · Chapter 3 · Slide 3"
+   },
+   {
+    "kicker": "Exam Technique",
+    "heading": "Eliminate <em>ruthlessly</em>",
+    "subtitle": "Five options means the odds of a blind guess are only 1 in 5 — improve them.",
+    "bullets": [
+     "Cross out any option that's obviously the wrong size, sign or units.",
+     "Two options that look almost identical are a strong hint — study the difference.",
+     "Once you're down to two, a quick estimate usually settles it."
+    ],
+    "note": "TridaPro · Chapter 3 · Slide 4"
+   }
+  ],
+  "drills": [
+   {
+    "stem": "What is the area of a rectangle 7 cm by 5 cm?",
+    "options": [
+     "12",
+     "24",
+     "30",
+     "35",
+     "70"
+    ],
+    "correct": 3,
+    "explanation": "Area = 7 × 5 = 35 cm²."
+   },
+   {
+    "stem": "A square has area 49. What is its perimeter?",
+    "options": [
+     "14",
+     "21",
+     "28",
+     "35",
+     "49"
+    ],
+    "correct": 2,
+    "explanation": "Side = √49 = 7. Perimeter = 4×7 = 28."
+   },
+   {
+    "stem": "What is the next shape-number in the sequence 1, 4, 9, 16, 25, ...?",
+    "options": [
+     "30",
+     "32",
+     "34",
+     "36",
+     "49"
+    ],
+    "correct": 3,
+    "explanation": "These are square numbers: 6² = 36."
+   },
+   {
+    "stem": "A rectangle has perimeter 30 and width 6. What is its length?",
+    "options": [
+     "6",
+     "9",
+     "12",
+     "15",
+     "18"
+    ],
+    "correct": 1,
+    "explanation": "Perimeter = 2(l+w), so 30 = 2(l+6), l+6=15, l=9."
+   },
+   {
+    "stem": "How many lines of symmetry does a regular hexagon have?",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "6",
+     "8"
+    ],
+    "correct": 3,
+    "explanation": "A regular hexagon has 6 lines of symmetry — one through each pair of opposite vertices or edge midpoints."
+   },
+   {
+    "stem": "What is the size of each exterior angle of a regular pentagon?",
+    "options": [
+     "60°",
+     "72°",
+     "90°",
+     "108°",
+     "120°"
+    ],
+    "correct": 1,
+    "explanation": "Exterior angles of a regular polygon sum to 360°. 360 ÷ 5 = 72°."
+   },
+   {
+    "stem": "A cuboid measures 4 cm × 3 cm × 2 cm. What is its volume?",
+    "options": [
+     "9",
+     "12",
+     "18",
+     "24",
+     "36"
+    ],
+    "correct": 3,
+    "explanation": "Volume = 4 × 3 × 2 = 24 cm³."
+   },
+   {
+    "stem": "Three angles on a straight line are 2x, 3x and x. What is x?",
+    "options": [
+     "20",
+     "30",
+     "36",
+     "45",
+     "60"
+    ],
+    "correct": 1,
+    "explanation": "The three angles sum to 180°: 2x+3x+x = 6x = 180, so x = 30."
+   },
+   {
+    "stem": "How many diagonals does a hexagon have?",
+    "options": [
+     "6",
+     "8",
+     "9",
+     "10",
+     "12"
+    ],
+    "correct": 2,
+    "explanation": "Diagonals = n(n−3)/2 = 6×3/2 = 9."
+   },
+   {
+    "stem": "A single six-sided die is rolled. What is P(rolling a number greater than 4)?",
+    "options": [
+     "1/6",
+     "1/3",
+     "1/2",
+     "2/3",
+     "5/6"
+    ],
+    "correct": 1,
+    "explanation": "Numbers greater than 4 are 5 and 6 — two out of six outcomes. P = 2/6 = 1/3."
+   },
+   {
+    "stem": "Five children have heights (in cm) 132, 140, 136, 145, 138. What is the range?",
+    "options": [
+     "8",
+     "9",
+     "10",
+     "12",
+     "13"
+    ],
+    "correct": 4,
+    "explanation": "Range = largest − smallest = 145 − 132 = 13."
+   },
+   {
+    "stem": "Triangle ABC has AB = AC and angle B = 65°. What is angle A?",
+    "options": [
+     "40°",
+     "50°",
+     "55°",
+     "65°",
+     "70°"
+    ],
+    "correct": 1,
+    "explanation": "Base angles are equal, so angle C = 65° too. Angle A = 180 − 65 − 65 = 50°."
+   },
+   {
+    "stem": "A code uses 2 digits, each from 1–9, and digits may repeat. How many codes are possible?",
+    "options": [
+     "9",
+     "18",
+     "36",
+     "72",
+     "81"
+    ],
+    "correct": 4,
+    "explanation": "There are 9 choices for each digit: 9 × 9 = 81."
+   },
+   {
+    "stem": "What is the circumference of a circle with radius 7? (Use π ≈ 22/7)",
+    "options": [
+     "22",
+     "33",
+     "44",
+     "66",
+     "88"
+    ],
+    "correct": 2,
+    "explanation": "Circumference = 2πr = 2 × (22/7) × 7 = 44."
+   },
+   {
+    "stem": "A box contains 2 blue, 3 green and 5 yellow balls. What is P(not yellow)?",
+    "options": [
+     "1/2",
+     "3/10",
+     "1/5",
+     "3/5",
+     "2/5"
+    ],
+    "correct": 0,
+    "explanation": "Not-yellow balls = 2+3 = 5 out of 10 total. P = 5/10 = 1/2."
+   }
+  ],
+  "test": [
+   {
+    "stem": "What is the area of a rectangle 9 cm by 6 cm?",
+    "options": [
+     "15",
+     "30",
+     "45",
+     "54",
+     "63"
+    ],
+    "correct": 3,
+    "explanation": "Area = 9 × 6 = 54 cm²."
+   },
+   {
+    "stem": "A square has perimeter 36. What is its area?",
+    "options": [
+     "36",
+     "49",
+     "64",
+     "81",
+     "100"
+    ],
+    "correct": 3,
+    "explanation": "Side = 36 ÷ 4 = 9. Area = 9² = 81."
+   },
+   {
+    "stem": "What is the next number in 2, 6, 12, 20, 30, ...?",
+    "options": [
+     "36",
+     "38",
+     "40",
+     "42",
+     "44"
+    ],
+    "correct": 3,
+    "explanation": "Differences are 4,6,8,10, rising by 2 each time — these are n(n+1). The 6th term is 6×7=42."
+   },
+   {
+    "stem": "A rectangle has perimeter 44 and length 14. What is its width?",
+    "options": [
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "correct": 2,
+    "explanation": "44 = 2(14+w), so 14+w = 22, w = 8."
+   },
+   {
+    "stem": "How many lines of symmetry does a square have?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "8"
+    ],
+    "correct": 3,
+    "explanation": "A square has 4 lines of symmetry: two diagonals and two through opposite edge midpoints."
+   },
+   {
+    "stem": "What is the size of each interior angle of a regular octagon?",
+    "options": [
+     "120°",
+     "125°",
+     "135°",
+     "140°",
+     "145°"
+    ],
+    "correct": 2,
+    "explanation": "Interior angle sum = (8−2)×180 = 1080°. Each angle = 1080 ÷ 8 = 135°."
+   },
+   {
+    "stem": "A cuboid measures 5 cm × 4 cm × 3 cm. What is its volume?",
+    "options": [
+     "12",
+     "20",
+     "45",
+     "60",
+     "70"
+    ],
+    "correct": 3,
+    "explanation": "Volume = 5 × 4 × 3 = 60 cm³."
+   },
+   {
+    "stem": "Three angles on a straight line are 3x, 4x and x. What is the largest angle?",
+    "options": [
+     "45°",
+     "60°",
+     "75°",
+     "90°",
+     "100°"
+    ],
+    "correct": 3,
+    "explanation": "8x = 180, so x = 22.5. Largest angle = 4x = 90°."
+   },
+   {
+    "stem": "How many diagonals does an octagon have?",
+    "options": [
+     "16",
+     "18",
+     "20",
+     "24",
+     "28"
+    ],
+    "correct": 2,
+    "explanation": "Diagonals = n(n−3)/2 = 8×5/2 = 20."
+   },
+   {
+    "stem": "A single six-sided die is rolled twice. What is P(both rolls show 6)?",
+    "options": [
+     "1/36",
+     "1/12",
+     "1/6",
+     "1/3",
+     "2/6"
+    ],
+    "correct": 0,
+    "explanation": "Each roll has P(6)=1/6, independent events: 1/6 × 1/6 = 1/36."
+   },
+   {
+    "stem": "Six children have test scores 12, 14, 16, 18, 20, 22. What is the mean?",
+    "options": [
+     "15",
+     "16",
+     "17",
+     "18",
+     "19"
+    ],
+    "correct": 2,
+    "explanation": "Sum = 102, divided by 6 = 17."
+   },
+   {
+    "stem": "Triangle ABC has angle A = 36° and AB = AC. What is angle B?",
+    "options": [
+     "62°",
+     "64°",
+     "68°",
+     "70°",
+     "72°"
+    ],
+    "correct": 4,
+    "explanation": "The two base angles are equal: (180 − 36) ÷ 2 = 72°."
+   },
+   {
+    "stem": "A code uses 3 digits, each from 0–9, with no digit repeated. How many codes are possible?",
+    "options": [
+     "720",
+     "729",
+     "800",
+     "900",
+     "1000"
+    ],
+    "correct": 0,
+    "explanation": "10 × 9 × 8 = 720."
+   },
+   {
+    "stem": "What is the area of a circle with radius 14? (Use π ≈ 22/7)",
+    "options": [
+     "154",
+     "308",
+     "440",
+     "616",
+     "880"
+    ],
+    "correct": 3,
+    "explanation": "Area = πr² = (22/7) × 14² = (22/7) × 196 = 616."
+   },
+   {
+    "stem": "A box contains 4 red, 2 green and 6 yellow balls. What is P(red or green)?",
+    "options": [
+     "1/6",
+     "1/3",
+     "1/2",
+     "2/3",
+     "5/6"
+    ],
+    "correct": 2,
+    "explanation": "Red or green = 4+2 = 6 out of 12 total. P = 6/12 = 1/2."
+   },
+   {
+    "stem": "A rectangular garden is 12 m by 8 m, with a 2 m wide path around the inside edge. What is the area of the path?",
+    "options": [
+     "64 m²",
+     "72 m²",
+     "80 m²",
+     "88 m²",
+     "96 m²"
+    ],
+    "correct": 0,
+    "explanation": "Inner rectangle (after removing the path) is 8 m × 4 m = 32 m². Path area = 96 − 32 = 64 m²."
+   },
+   {
+    "stem": "Four friends each shake hands with every other friend exactly once. How many handshakes take place?",
+    "options": [
+     "4",
+     "5",
+     "6",
+     "8",
+     "12"
+    ],
+    "correct": 2,
+    "explanation": "Each pair shakes hands once: there are 4×3/2 = 6 pairs."
+   },
+   {
+    "stem": "A square is cut into 4 equal smaller squares. What fraction of the original square's perimeter does one small square's perimeter represent?",
+    "options": [
+     "1/4",
+     "1/2",
+     "3/4",
+     "1",
+     "5/4"
+    ],
+    "correct": 1,
+    "explanation": "If the big square has side 2, its perimeter is 8. Each small square has side 1, so its perimeter is 4 — half of 8, giving the fraction 1/2."
+   },
+   {
+    "stem": "In a 5-question quiz, each question is worth 1 mark and there is no penalty for a wrong answer. How many different total scores are possible (from 0 to 5)?",
+    "options": [
+     "4",
+     "5",
+     "6",
+     "7",
+     "10"
+    ],
+    "correct": 2,
+    "explanation": "The possible scores are 0,1,2,3,4,5 — six different totals."
+   },
+   {
+    "stem": "A number is multiplied by itself and the result is 225. What is twice that number?",
+    "options": [
+     "15",
+     "20",
+     "25",
+     "30",
+     "45"
+    ],
+    "correct": 3,
+    "explanation": "√225 = 15. Twice 15 is 30."
+   },
+   {
+    "stem": "What is the probability of rolling a total of 8 with two fair dice?",
+    "options": [
+     "1/12",
+     "5/36",
+     "1/6",
+     "7/36",
+     "1/4"
+    ],
+    "correct": 1,
+    "explanation": "5 of the 36 outcomes sum to 8 (2+6, 3+5, 4+4, 5+3, 6+2). P = 5/36."
+   },
+   {
+    "stem": "A cone and a cylinder share the same base radius and height. The cylinder's volume is 120 cm³. What is the cone's volume?",
+    "options": [
+     "30 cm³",
+     "40 cm³",
+     "45 cm³",
+     "60 cm³",
+     "90 cm³"
+    ],
+    "correct": 1,
+    "explanation": "A cone's volume is exactly one third of a cylinder's with the same base and height: 120 ÷ 3 = 40 cm³."
+   },
+   {
+    "stem": "How many squares of any size (1×1, 2×2 or 3×3) can be found in a 3×3 grid of unit squares?",
+    "options": [
+     "9",
+     "10",
+     "12",
+     "13",
+     "14"
+    ],
+    "correct": 4,
+    "explanation": "1×1 squares: 9. 2×2 squares: 4. 3×3 squares: 1. Total = 9+4+1 = 14."
+   },
+   {
+    "stem": "Triangle PQR has PQ = QR = PR (equilateral). A line from Q meets PR at its midpoint M. What is angle QMP?",
+    "options": [
+     "60°",
+     "75°",
+     "80°",
+     "90°",
+     "100°"
+    ],
+    "correct": 3,
+    "explanation": "In an equilateral triangle, the line from a vertex to the midpoint of the opposite side is also the perpendicular bisector, meeting it at 90°."
+   },
+   {
+    "stem": "A path of unit squares is built so each row has 2 more squares than the row above, starting with 1 square in row 1. How many squares are in row 6?",
+    "options": [
+     "9",
+     "10",
+     "11",
+     "12",
+     "13"
+    ],
+    "correct": 2,
+    "explanation": "Row n has 1 + 2(n−1) squares. Row 6: 1 + 2×5 = 11."
+   }
+  ]
+ }
+]

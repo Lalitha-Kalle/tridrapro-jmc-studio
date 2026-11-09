@@ -1,0 +1,19 @@
+<table class="tbl">
+ <thead><tr><th>When (UTC)</th><th>Chapter</th><th>Mode</th><th>Score</th><th>Correct</th><th>Blank</th><th>Time</th><th></th></tr></thead>
+ <tbody>
+ {% for a in attempts %}
+  <tr>
+   <td class="muted">{{ a.created_at }}</td>
+   <td>{{ a.chapter_name }}</td>
+   <td>{{ 'JMC mock' if a.kind == 'test' else 'Drills' }}</td>
+   <td><b>{{ a.score }}</b> / {{ a.max_score }}</td>
+   <td>{{ a.num_correct }} / {{ a.num_questions }}</td>
+   <td>{{ a.num_blank }}</td>
+   <td>{{ '%02d:%02d' % (a.duration_secs // 60, a.duration_secs % 60) }}</td>
+   <td><form method="post" action="{{ url_for('admin.delete_attempt', attempt_id=a.id) }}" onsubmit="return confirm('Delete this result?')"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link danger">Delete</button></form></td>
+  </tr>
+ {% else %}
+  <tr><td colspan="8" class="muted">No results recorded yet — they appear here when pupils finish drills or a mock.</td></tr>
+ {% endfor %}
+ </tbody>
+</table>

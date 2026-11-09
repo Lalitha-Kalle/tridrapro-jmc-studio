@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ 'Edit' if slide else 'New' }} slide{% endblock %}
+{% block body %}
+<p><a href="{{ url_for('admin.edit_chapter', chapter_id=ch.id) }}#slides">← {{ ch.name }}</a></p>
+<div class="card">
+ <h1>{{ 'Edit' if slide else 'New' }} slide</h1>
+ <form method="post" class="grid2">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Kicker<input name="kicker" value="{{ slide.kicker if slide else '' }}" placeholder="JMC Strategy"></label>
+  {% if slide %}<label>Order<input type="number" name="position" value="{{ slide.position }}"></label>{% endif %}
+  <label class="full">Heading <span class="muted small">(wrap a word in &lt;em&gt;…&lt;/em&gt; to highlight it in gold)</span><input name="heading" value="{{ slide.heading if slide else '' }}" required></label>
+  <label class="full">Subtitle<input name="subtitle" value="{{ slide.subtitle if slide else '' }}"></label>
+  <label class="full">Bullet points <span class="muted small">(one per line)</span><textarea name="bullets" rows="5">{{ bullets|join('\n') }}</textarea></label>
+  <label class="full">Footer note<input name="note" value="{{ slide.note if slide else '' }}" placeholder="TridaPro · {{ ch.name }} · Slide 1"></label>
+  <div class="full"><button class="btn gold">Save slide</button></div>
+ </form>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+:root{
+ --navy:#12182A; --gold:#F5C62A; --gold2:#AC8B1D; --ink:#12182A; --ink-soft:#5B6180; --ink-faint:#8A8F9E;
+ --line:#E3E5EC; --bg:#F6F7FA; --surface:#fff; --ok:#12996B; --ok-soft:#E3F5EE; --bad:#C7302A; --bad-soft:#FBE9E8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,system-ui,sans-serif;font-size:14px;color:var(--ink);background:var(--bg)}
+a{color:var(--navy)}
+code{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12px}
+.top{display:flex;align-items:center;gap:20px;padding:10px 24px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.brand img{height:30px}
+.brand span{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold2)}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.top nav a{text-decoration:none;font-weight:600;color:var(--ink-soft)}
+.top nav a:hover{color:var(--navy)}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:22px;margin:0 0 14px}
+h2{font-size:16px;margin:0}
+.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px;flex-wrap:wrap}
+.card .row-head{margin-top:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{margin-bottom:12px}
+.card.narrow{max-width:380px;margin:60px auto}
+.muted{color:var(--ink-faint)} .small{font-size:12px}
+.warn{color:var(--bad);font-size:11px;font-weight:600}
+.tbl{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card .tbl{border:none}
+.tbl th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink-faint);padding:9px 12px;border-bottom:1px solid var(--line);background:#FAFBFC}
+.tbl td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl em{color:var(--gold2);font-style:normal;font-weight:600}
+.actions{white-space:nowrap;display:flex;gap:12px;align-items:center}
+.actions form{display:inline}
+form.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:12.5px;color:var(--ink-soft)}
+label.opt{flex-direction:row;align-items:center;gap:10px}
+label.opt span{display:flex;align-items:center;gap:6px;width:48px;font-weight:700;color:var(--ink)}
+label.opt input[name^=option]{flex:1}
+input:not([type=radio]):not([type=file]),textarea,select{font:inherit;font-weight:400;color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;width:100%}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--navy)}
+.card.narrow form{display:flex;flex-direction:column;gap:14px}
+form.inline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.inline-lbl{flex-direction:row;align-items:center;gap:6px}
+.inline-lbl input{width:90px!important}
+.filters{display:flex;gap:8px}
+.filters select{width:auto}
+.btn{font:inherit;font-weight:600;font-size:13px;border-radius:8px;padding:9px 16px;cursor:pointer;border:1.5px solid transparent;text-decoration:none;display:inline-block}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.gold:hover{filter:brightness(.95)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--navy)}
+.btn.ghost:hover{border-color:var(--navy)}
+.btn.danger{background:var(--bad);color:#fff}
+.link{font:inherit;background:none;border:none;padding:0;color:var(--ink-soft);cursor:pointer;font-weight:600}
+.link.danger{color:var(--bad)}
+.card.excel{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.card.excel h2{margin-bottom:4px}
+.card.excel p{margin:0;max-width:520px}
+.excel-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.excel-actions form.inline{margin-top:0}
+.danger-zone{border-color:var(--bad-soft)}
+.flash{padding:10px 14px;border-radius:8px;margin-bottom:14px;font-weight:500}
+.flash.ok{background:var(--ok-soft);color:var(--ok)}
+.flash.error{background:var(--bad-soft);color:var(--bad)}
+@media (max-width:700px){
+ form.grid2{grid-template-columns:1fr}
+ .tbl{display:block;overflow-x:auto}
+}

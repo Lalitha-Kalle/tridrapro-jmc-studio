@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Admin{% endblock %} · TridaPro JMC Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+<header class="top">
+ <a href="{{ url_for('admin.index') }}" class="brand"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="TridaPro"><span>Admin</span></a>
+ {% if session.admin %}
+ <nav>
+  <a href="{{ url_for('admin.index') }}">Chapters</a>
+  <a href="{{ url_for('admin.attempts') }}">Results</a>
+  <a href="{{ url_for('studio') }}">Open studio ↗</a>
+  <form method="post" action="{{ url_for('admin.logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link">Log out</button></form>
+ </nav>
+ {% endif %}
+</header>
+<main>
+ {% with msgs = get_flashed_messages(with_categories=true) %}
+  {% for cat, m in msgs %}<div class="flash {{ cat }}">{{ m }}</div>{% endfor %}
+ {% endwith %}
+ {% block body %}{% endblock %}
+</main>
+</body>
+</html>

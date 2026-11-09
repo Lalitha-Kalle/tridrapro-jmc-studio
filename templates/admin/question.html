@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ 'Edit' if q else 'New' }} question{% endblock %}
+{% block body %}
+<p><a href="{{ url_for('admin.edit_chapter', chapter_id=ch.id) }}#{{ kind }}">← {{ ch.name }}</a></p>
+<div class="card">
+ <h1>{{ 'Edit' if q else 'New' }} {{ 'drill' if kind == 'drill' else 'JMC mock' }} question</h1>
+ <form method="post" class="grid2">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label class="full">Question<textarea name="stem" rows="3" required>{{ q.stem if q else '' }}</textarea></label>
+  {% for i in range(5) %}
+  <label class="opt full"><span><input type="radio" name="correct" value="{{ i }}" {{ 'checked' if q and q.correct == i }} required> {{ 'ABCDE'[i] }}</span><input name="option{{ i }}" value="{{ options[i] if i < options|length else '' }}"{{ ' required' if i < 2 }}></label>
+  {% endfor %}
+  <p class="full muted small">Select the radio button next to the correct answer. Options D and E may be left blank.</p>
+  {% if q %}<label>Order<input type="number" name="position" value="{{ q.position }}"></label>{% endif %}
+  <label class="full">Explanation <span class="muted small">(shown after answering / in review)</span><textarea name="explanation" rows="3">{{ q.explanation if q else '' }}</textarea></label>
+  <div class="full"><button class="btn gold">Save question</button></div>
+ </form>
+</div>
+{% endblock %}

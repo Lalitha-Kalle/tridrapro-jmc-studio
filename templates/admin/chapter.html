@@ -1,0 +1,74 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ ch.name }}{% endblock %}
+{% block body %}
+<p><a href="{{ url_for('admin.index') }}">← Chapters</a></p>
+<div class="card">
+ <h1>{{ ch.name }} <code class="small">{{ ch.slug }}</code></h1>
+ <form method="post" class="grid2">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Name<input name="name" value="{{ ch.name }}" required></label>
+  <label>Order<input type="number" name="position" value="{{ ch.position }}"></label>
+  <label class="full">Subtitle<input name="subtitle" value="{{ ch.subtitle }}"></label>
+  <label class="full">Google Slides embed URL <span class="muted small">(leave blank to use the built-in slides below)</span><input name="deck_url" value="{{ ch.deck_url }}" placeholder="https://docs.google.com/presentation/d/…/embed"></label>
+  <div class="full"><button class="btn gold">Save chapter</button></div>
+ </form>
+</div>
+
+<div class="card">
+ <h2>Classwork worksheet (PDF)</h2>
+ {% if ch.worksheet_file %}
+  <p>✓ Uploaded · {{ ch.worksheet_pages }} pages · <a href="{{ url_for('worksheet', slug=ch.slug) }}" target="_blank">View</a></p>
+ {% else %}
+  <p class="muted">No worksheet uploaded — pupils see an “isn't uploaded yet” notice.</p>
+ {% endif %}
+ <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.upload_worksheet', chapter_id=ch.id) }}" class="inline">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input type="file" name="pdf" accept="application/pdf" required>
+  <label class="inline-lbl">Pages <input type="number" name="pages" min="0" placeholder="auto"></label>
+  <button class="btn ghost">{{ 'Replace' if ch.worksheet_file else 'Upload' }} PDF</button>
+ </form>
+ {% if ch.worksheet_file %}
+ <form method="post" action="{{ url_for('admin.delete_worksheet', chapter_id=ch.id) }}" onsubmit="return confirm('Remove this worksheet?')" class="inline">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link danger">Remove worksheet</button>
+ </form>
+ {% endif %}
+</div>
+
+<div class="card" id="slides">
+ <div class="row-head"><h2>Built-in slides · {{ slides|length }}</h2><a class="btn ghost" href="{{ url_for('admin.edit_slide', chapter_id=ch.id) }}">+ Add slide</a></div>
+ <table class="tbl">
+  <thead><tr><th>#</th><th>Kicker</th><th>Heading</th><th>Bullets</th><th></th></tr></thead>
+  <tbody>
+  {% for s in slides %}
+   <tr><td class="muted">{{ s.position }}</td><td>{{ s.kicker }}</td><td>{{ s.heading|safe }}</td><td>{{ loads(s.bullets)|length }}</td>
+    <td class="actions"><a href="{{ url_for('admin.edit_slide', chapter_id=ch.id, slide_id=s.id) }}">Edit</a>
+     <form method="post" action="{{ url_for('admin.delete_slide', chapter_id=ch.id, slide_id=s.id) }}" onsubmit="return confirm('Delete this slide?')"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link danger">Delete</button></form></td></tr>
+  {% else %}<tr><td colspan="5" class="muted">No slides.</td></tr>{% endfor %}
+  </tbody>
+ </table>
+</div>
+
+{% for kind, title, rows in [('drill', 'Classwork drills', drills), ('test', 'JMC mock (Q1–15 = 5 marks, Q16–25 = 6 marks)', tests)] %}
+<div class="card" id="{{ kind }}">
+ <div class="row-head"><h2>{{ title }} · {{ rows|length }}</h2><a class="btn ghost" href="{{ url_for('admin.edit_question', chapter_id=ch.id, kind=kind) }}">+ Add question</a></div>
+ <table class="tbl">
+  <thead><tr><th>Q</th><th>Question</th><th>Answer</th><th></th></tr></thead>
+  <tbody>
+  {% for q in rows %}
+   <tr><td class="muted">{{ loop.index }}</td><td>{{ q.stem }}</td><td><b>{{ 'ABCDE'[q.correct] }}</b> · {{ loads(q.options)[q.correct] }}</td>
+    <td class="actions"><a href="{{ url_for('admin.edit_question', chapter_id=ch.id, kind=kind, question_id=q.id) }}">Edit</a>
+     <form method="post" action="{{ url_for('admin.delete_question', chapter_id=ch.id, kind=kind, question_id=q.id) }}" onsubmit="return confirm('Delete this question?')"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link danger">Delete</button></form></td></tr>
+  {% else %}<tr><td colspan="4" class="muted">No questions.</td></tr>{% endfor %}
+  </tbody>
+ </table>
+</div>
+{% endfor %}
+
+<div class="card danger-zone">
+ <h2>Delete chapter</h2>
+ <p class="muted">Removes the chapter with all its slides, questions, worksheet and recorded results.</p>
+ <form method="post" action="{{ url_for('admin.delete_chapter', chapter_id=ch.id) }}" onsubmit="return confirm('Delete this chapter and everything in it? This cannot be undone.')">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn danger">Delete {{ ch.name }}</button>
+ </form>
+</div>
+{% endblock %}

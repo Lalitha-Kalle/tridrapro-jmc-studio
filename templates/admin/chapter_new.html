@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% block title %}New chapter{% endblock %}
+{% block body %}
+<p><a href="{{ url_for('admin.index') }}">← Chapters</a></p>
+<div class="card">
+ <h1>New chapter</h1>
+ <form method="post" class="grid2">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Name<input name="name" value="{{ request.form.name }}" required placeholder="Chapter 4"></label>
+  <label>Short id <span class="muted small">(used in URLs, e.g. ch4)</span><input name="slug" value="{{ request.form.slug }}" required pattern="[a-z0-9][a-z0-9\-]*" placeholder="ch4"></label>
+  <label class="full">Subtitle<input name="subtitle" value="{{ request.form.subtitle }}"></label>
+  <label class="full">Google Slides embed URL <span class="muted small">(optional)</span><input name="deck_url" value="{{ request.form.deck_url }}" placeholder="https://docs.google.com/presentation/d/…/embed"></label>
+  <div class="full"><button class="btn gold">Create chapter</button></div>
+ </form>
+</div>
+{% endblock %}

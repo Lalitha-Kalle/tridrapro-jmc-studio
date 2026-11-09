@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% block title %}Results{% endblock %}
+{% block body %}
+<div class="row-head"><h1>Results</h1>
+ <form method="get" class="filters">
+  <select name="chapter"><option value="">All chapters</option>{% for c in chapters %}<option value="{{ c.id }}" {{ 'selected' if c.id == chapter_id }}>{{ c.name }}</option>{% endfor %}</select>
+  <select name="kind"><option value="">Drills &amp; mocks</option><option value="drill" {{ 'selected' if kind == 'drill' }}>Drills</option><option value="test" {{ 'selected' if kind == 'test' }}>JMC mock</option></select>
+  <button class="btn ghost">Filter</button>
+ </form>
+</div>
+{% include "admin/_attempts_table.html" %}
+{% endblock %}

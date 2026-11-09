@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% block title %}Teacher login{% endblock %}
+{% block body %}
+<div class="card narrow">
+ <h1>Teacher login</h1>
+ <p class="muted">Sign in to edit chapters, upload worksheets and see results.</p>
+ <form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Password<input type="password" name="password" autofocus required></label>
+  <button class="btn gold">Sign in</button>
+ </form>
+</div>
+{% endblock %}

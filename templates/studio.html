@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TridaPro · UKMT JMC Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/studio.css') }}">
+</head>
+<body>
+<div class="app">
+
+ <!-- ================= TOP BAR ================= -->
+ <header class="topbar">
+  <div class="brand">
+   <img src="{{ url_for('static', filename='img/logo.png') }}" alt="TridaPro — Measure. Improve. Succeed.">
+  </div>
+  <div class="divider"></div>
+
+  <div class="modes" role="group" aria-label="Mode">
+   <button id="mLearn" class="active"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Learn</button>
+   <button id="mDrills"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Classwork Drills</button>
+   <button id="mTest"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Test</button>
+  </div>
+
+  <div class="chapsel"><label for="selChap">Chapter</label><div class="selw"><select id="selChap"></select></div></div>
+  <div class="spacer"></div>
+  <div class="nocalc" title="UKMT rules: no calculators in the JMC"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 16l6-6M9 10l6 6"/></svg>No calculators</div>
+  <a class="adminlink" href="{{ url_for('admin.index') }}" title="Manage chapters, worksheets and results">{{ 'Admin' if is_admin else 'Teacher login' }}</a>
+ </header>
+
+ <div class="stage">
+  <!-- ================= LEARN ================= -->
+  <div class="learn" id="learnView">
+   <section class="pane deck">
+    <div class="phead">
+     <div class="ptitle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span id="deckName">Presentation</span></div>
+     <button class="tb" id="sPen" style="border-color:var(--gold);color:var(--gold2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>Pen</button>
+     <div id="sSwatches" style="display:flex;gap:5px"></div>
+     <button class="tb" id="sUndo">Undo</button>
+     <button class="tb" id="sClear">Clear</button>
+     <div class="sep"></div>
+     <button class="tb" id="sLink"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7"/></svg>Deck link</button>
+    </div>
+    <div class="slidebox" id="slideBox">
+     <iframe class="slideframe" id="slideFrame" style="display:none" title="Chapter presentation" allowfullscreen></iframe>
+     <div class="demoslide" id="demoSlide"></div>
+     <canvas id="slidePen"></canvas>
+     <div class="noembed" id="noEmbed" style="display:none">
+      <h3>Link this chapter's Google Slides deck</h3>
+      <p>Uploaded once in the backend in the live product. For this prototype, paste a Google Slides <b>embed</b> URL.</p>
+      <div class="urlrow"><input id="urlIn" placeholder="https://docs.google.com/presentation/d/…/embed"><button class="btn gold" id="urlGo">Load</button></div>
+      <button class="btn ghost" id="urlCancel" style="color:#B7BBDA;border-color:rgba(255,255,255,.25)">Use built-in sample slides</button>
+     </div>
+    </div>
+    <div class="snav">
+     <button class="tb" id="sPrev">‹ Prev</button>
+     <button class="tb" id="sNext">Next ›</button>
+     <button class="tb" id="sFull">Present full screen</button>
+     <span class="cnt" id="sCount">—</span>
+    </div>
+   </section>
+   <section class="pane wb">
+    <div class="phead">
+     <div class="ptitle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v13H3z"/><path d="M8 21l4-5 4 5"/></svg>Whiteboard</div>
+     <div id="wSwatches" style="display:flex;gap:5px"></div>
+     <div class="sep"></div>
+     <input type="range" class="rng" id="wSize" min="1" max="16" value="3" aria-label="Pen size">
+     <div class="sep"></div>
+     <button class="tb active" id="wPen">Pen</button>
+     <button class="tb" id="wErase">Eraser</button>
+     <button class="tb" id="wGrid">Squared</button>
+     <button class="tb" id="wUndo">Undo</button>
+     <button class="tb" id="wClear">Clear</button>
+     <button class="tb" id="wSave" style="border-color:var(--navy);color:var(--navy)">Save PNG</button>
+    </div>
+    <div class="board-wrap grid" id="boardWrap">
+     <canvas id="board"></canvas>
+     <div class="whint" id="wHint">Work it out here<span>squared paper · pen · eraser · undo</span></div>
+    </div>
+   </section>
+  </div>
+
+  <!-- ================= DRILLS ================= -->
+  <div class="stage" id="drillsView" style="display:none;flex-direction:column">
+   <div class="dsub-bar">
+    <div class="dsub-tabs" role="group" aria-label="Classwork Drills view">
+     <button class="dsub-btn active" id="dSubQuiz"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Quiz</button>
+     <button class="dsub-btn" id="dSubPdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Worksheet (PDF)</button>
+    </div>
+    <div class="dsub-hint">Worksheet lets you scribble directly on a printable-style classwork PDF.</div>
+   </div>
+
+   <div class="stage" id="dQuizPane" style="flex:1;min-height:0">
+    <div class="setup" id="dSetup">
+     <div class="setupcard">
+      <div class="kick">Classwork Drills · Quiz</div>
+      <h2 id="dChap">Choose how many questions</h2>
+      <div class="s">Untimed practice with instant feedback. Great for working through a chapter together on the board.</div>
+      <div class="grp">
+       <div class="lb">Number of questions</div>
+       <div class="stepper" id="dStepper"></div>
+      </div>
+      <button class="btn gold" id="startDrills" style="width:100%;justify-content:center;padding:13px">Start drills · <span id="dStartLbl">10 questions</span></button>
+     </div>
+    </div>
+    <div class="runwrap" id="dRun">
+     <div class="bb-top">
+      <div class="bb-left">
+       <button class="bb-back" id="dBack"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg> Go back</button>
+       <span class="lvlchip">Classwork Drills</span>
+       <span class="modechip" id="dCountChip">10 questions</span>
+      </div>
+      <div class="bb-mid"><div class="bb-timer" id="dTimer">00:00</div><div style="font-size:9.5px;font-weight:600;color:var(--ink-faint);letter-spacing:.4px;text-transform:uppercase">Time on task</div></div>
+      <div class="bb-right">
+       <button class="bb-tool" id="dPen"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg>Pen</button>
+       <button class="bb-tool" id="dHigh"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 3l6 6-9 9H6v-6z"/><path d="M3 21h18"/></svg>Highlight</button>
+       <div class="inkbar" id="dInkBar" style="display:none"><div style="display:flex;gap:5px" id="dInkSw"></div><button class="tb" id="dInkUndo" style="padding:5px 9px;font-size:11px">Undo</button><button class="tb" id="dInkClear" style="padding:5px 9px;font-size:11px">Clear</button></div>
+       <button class="bb-tool" id="dElimBtn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>Eliminator</button>
+      </div>
+     </div>
+     <div class="bb-wrap" id="dWrap"><div class="bb-body"><div class="qcard" id="dCard"></div></div><canvas id="qInkD"></canvas></div>
+     <div class="bb-bot">
+      <div class="navpop" id="dNavPop"><div class="t" id="dNavTitle">Drills</div><div class="navgrid" id="dNavGrid"></div></div>
+      <button class="qpick" id="dPick">— <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 15l6-6 6 6"/></svg></button>
+      <div class="rr"><button class="pillbtn" id="dPrev">Previous</button><button class="pillbtn gold" id="dNext">Next</button></div>
+     </div>
+    </div>
+    <div class="res" id="dRes" style="display:none">
+     <div class="rescard">
+      <div class="kick" id="dResKick">Classwork Drills</div>
+      <div class="score"><span id="dScoreN">0</span><span class="of">/10</span></div>
+      <div class="resmsg" id="dResMsg"></div>
+      <div class="bars" id="dResBars"></div>
+      <div class="resbtns">
+       <button class="btn ghost" id="dRetry">Try again</button>
+       <button class="btn ghost" id="dBack2">Back to chapter</button>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!-- ============ WORKSHEET (PDF + Scribble) ============ -->
+   <div class="stage" id="dPdfPane" style="display:none;flex:1;min-height:0;flex-direction:column">
+    <div class="cw-toolbar" id="cwToolbar" style="display:none">
+     <div class="cw-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg><span id="cwTitle">Classwork worksheet</span><span class="cw-pages" id="cwPages"></span></div>
+     <button class="tb" id="cwScribbleToggle" style="border-color:var(--gold);color:var(--gold2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>Scribble</button>
+     <button class="tb" id="cwDownload"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>Download</button>
+    </div>
+    <div class="cwframe-wrap" id="cwFrameWrap">
+     <div id="cwIframeSlot"></div>
+     <canvas id="cwInk"></canvas>
+     <div class="cw-ann-hint">Drawing on the page — toggle Scribble off to scroll</div>
+     <div class="cw-ann" id="cwAnn">
+      <button class="cw-ann-btn on" id="cwToolPen" title="Pen" data-tool="pen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></button>
+      <button class="cw-ann-btn" id="cwToolHi" title="Highlighter" data-tool="highlighter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l6-6 4 4-6 6H9v-4z"/><path d="M5 19l2-6 4 4-2 4-4 1z"/></svg></button>
+      <button class="cw-ann-btn" id="cwToolEr" title="Eraser" data-tool="eraser"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20H9l-5.5-5.5a2 2 0 010-2.8L12 3l9 9-7 7"/><path d="M14.5 6.5l5 5"/></svg></button>
+      <div class="cw-ann-div"></div>
+      <div class="cw-ann-swatches" id="cwSwatches"></div>
+      <div class="cw-ann-div"></div>
+      <button class="cw-ann-btn" id="cwToolUndo" title="Undo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12H9"/></svg></button>
+      <button class="cw-ann-btn" id="cwToolClear" title="Clear all"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/></svg></button>
+      <div class="cw-ann-div"></div>
+      <button class="cw-ann-btn" id="cwToolDone" title="Exit scribble mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+     </div>
+     <div class="cw-empty" id="cwEmpty" style="display:none">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+      <h3 id="cwEmptyTitle">This chapter's worksheet isn't uploaded yet</h3>
+      <p id="cwEmptyBody">A teacher drops the Classwork PDF in once in the backend and it appears here automatically — exactly like Chapter 1's worksheet.</p>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- ================= TEST ================= -->
+  <div class="stage" id="testView" style="display:none">
+   <div class="setup" id="tSetup">
+    <div class="setupcard">
+     <div class="kick">UKMT Junior Mathematical Challenge · Mock</div>
+     <h2 id="tChap">Full paper, exam conditions</h2>
+     <div class="s">25 questions · 60 minutes · calculators not permitted, exactly as on the day. For pupils in Year 7 and Year 8 (England &amp; Wales), Year 8 and Year 9 (Northern Ireland), or S1 and S2 (Scotland).</div>
+     <div class="rulebox">
+      <b>Marking scheme</b><br>
+      Questions 1–15: <span class="gd">+5</span> for a correct answer, 0 if wrong, 0 if blank<br>
+      Questions 16–25: <span class="gd">+6</span> for a correct answer, 0 if wrong, 0 if blank<br>
+      <b>No penalty</b> for an incorrect answer anywhere on the paper<br>
+      Maximum possible score: <b>135</b>
+     </div>
+     <button class="btn gold" id="startTest" style="width:100%;justify-content:center;padding:13px">Start the 60-minute mock</button>
+    </div>
+   </div>
+
+   <div class="runwrap" id="tRun">
+    <div class="bb-top">
+     <div class="bb-left">
+      <button class="bb-back" id="tBack"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg> Go back</button>
+      <span class="lvlchip">JMC Mock</span>
+      <span class="modechip" id="tYrChip">60-minute mock</span>
+     </div>
+     <div class="bb-mid">
+      <div class="bb-timer" id="tTimer">60:00</div>
+      <div class="bb-trow"><button class="bb-pause" id="tPause">❚❚</button><button class="bb-hide" id="tHide">Hide</button></div>
+     </div>
+     <div class="bb-right" id="tToolsLive">
+      <button class="bb-tool" id="tElimBtn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>Eliminator</button>
+     </div>
+     <div class="bb-right" id="tToolsReview" style="display:none">
+      <span class="modechip" style="background:var(--ok-soft);color:var(--ok)">Reviewing</span>
+      <button class="bb-tool" id="tPen"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg>Pen</button>
+      <button class="bb-tool" id="tHigh"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 3l6 6-9 9H6v-6z"/><path d="M3 21h18"/></svg>Highlight</button>
+      <div class="inkbar" id="tInkBar" style="display:none"><div style="display:flex;gap:5px" id="tInkSw"></div><button class="tb" id="tInkUndo" style="padding:5px 9px;font-size:11px">Undo</button><button class="tb" id="tInkClear" style="padding:5px 9px;font-size:11px">Clear</button></div>
+     </div>
+    </div>
+    <div class="bb-wrap" id="tWrap"><div class="bb-body"><div class="qcard" id="tCard"></div></div><canvas id="qInkT"></canvas></div>
+    <div class="bb-bot">
+     <div class="navpop" id="tNavPop"><div class="t" id="tNavTitle">JMC Mock</div><div class="navgrid" id="tNavGrid"></div></div>
+     <button class="qpick" id="tPick">— <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 15l6-6 6 6"/></svg></button>
+     <div class="rr"><button class="pillbtn" id="tPrev">Previous</button><button class="pillbtn gold" id="tNext">Next</button></div>
+    </div>
+   </div>
+
+   <!-- ANALYTICS REPORT -->
+   <div class="report" id="tReport" style="display:none">
+    <div class="repwrap">
+     <div class="rephead">
+      <div class="repscore"><span class="n" id="repScore">0</span><span class="d">/ 135</span></div>
+      <div class="repmeta"><div class="ch" id="repChap">Chapter · JMC Mock</div><div class="yr" id="repYr">Completed in 00:00</div></div>
+      <span class="badge" id="repBadge">Bronze</span>
+     </div>
+
+     <div class="card">
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18"/><path d="M7 13l4-4 3 3 5-6"/></svg>Score vs. certificate thresholds</h3>
+      <div class="gauge" id="gauge"></div>
+      <div class="gaugekey">
+       <span><i style="background:var(--silver-soft);border:1px solid var(--silver)"></i>Below 47 — Participation</span>
+       <span><i style="background:var(--bronze-soft)"></i>47+ Bronze</span>
+       <span><i style="background:#E9E4D2"></i>59+ Silver</span>
+       <span><i style="background:var(--gold-soft)"></i>75+ Gold</span>
+      </div>
+     </div>
+
+     <div class="card">
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 15a4 4 0 100-8 4 4 0 000 8z"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg>UKMT follow-on rounds</h3>
+      <div class="qualgrid" id="qualGrid"></div>
+     </div>
+
+     <div class="card">
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Breakdown by question band</h3>
+      <div class="bandgrid" id="bandGrid"></div>
+     </div>
+
+     <div class="card">
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Question-by-question review</h3>
+      <div style="max-height:360px;overflow:auto"><table class="revtable" id="revTable"></table></div>
+     </div>
+
+     <div class="repbtns">
+      <button class="btn gold" id="repReview">Review with explanations</button>
+      <button class="btn ghost" id="repRetry">Retake this mock</button>
+      <button class="btn ghost" id="repBack">Back to chapter</button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- submit confirm modal -->
+<div class="modal" id="submitModal">
+ <div class="mbox">
+  <h3>Submit the test?</h3>
+  <p id="submitBody">You still have questions left unanswered. Once submitted, the paper is marked using the official UKMT scheme and cannot be changed.</p>
+  <div class="mbtns"><button class="btn ghost" id="submitCancel">Keep working</button><button class="btn gold" id="submitGo">Submit paper</button></div>
+ </div>
+</div>
+
+<div id="toasts"></div>
+
+
+<script>
+window.CHAPTERS = {{ chapters|tojson }};
+window.IS_ADMIN = {{ 'true' if is_admin else 'false' }};
+window.CSRF_TOKEN = {{ csrf_token()|tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/studio.js') }}"></script>
+</body>
+</html>
