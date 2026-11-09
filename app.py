@@ -28,12 +28,14 @@ def check_csrf():
 
 
 def create_app():
+    # DATA_DIR lets a host put the database and uploads on a persistent disk
+    data_dir = Path(os.environ.get("DATA_DIR", BASE_DIR / "instance"))
     app = Flask(__name__, instance_path=str(BASE_DIR / "instance"))
     app.config.update(
         SECRET_KEY=os.environ.get("SECRET_KEY", "dev-change-me"),
         ADMIN_PASSWORD=os.environ.get("ADMIN_PASSWORD", "admin"),
-        DATABASE=str(BASE_DIR / "instance" / "studio.db"),
-        UPLOAD_FOLDER=str(BASE_DIR / "instance" / "uploads"),
+        DATABASE=str(data_dir / "studio.db"),
+        UPLOAD_FOLDER=str(data_dir / "uploads"),
         MAX_CONTENT_LENGTH=25 * 1024 * 1024,  # worksheet PDFs up to 25 MB
     )
     Path(app.config["UPLOAD_FOLDER"]).mkdir(parents=True, exist_ok=True)

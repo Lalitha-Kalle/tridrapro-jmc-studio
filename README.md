@@ -56,6 +56,18 @@ still uploaded per chapter in the admin panel.
 | `ADMIN_PASSWORD` | `admin`         | Teacher login password — change it        |
 | `SECRET_KEY`     | `dev-change-me` | Signs the session cookie — change it      |
 
+## Deploying (Render)
+
+- Build command: `pip install -r requirements.txt`
+- Start command: `gunicorn app:app`
+- Environment: set `ADMIN_PASSWORD` and `SECRET_KEY`.
+
+On a fresh server the database is built from `seed/` and then the committed
+`content.xlsx`, so commit `content.xlsx` after changing content you want live.
+Render's normal filesystem is wiped on every deploy and restart, which loses
+admin edits, uploaded PDFs and results. To keep them, attach a persistent disk
+and set `DATA_DIR` to its mount path (e.g. `/var/data`).
+
 ## Layout
 
 ```

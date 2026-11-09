@@ -96,11 +96,22 @@ def seed_db():
     db.commit()
 
 
+def load_content_workbook():
+    """Apply content.xlsx (the committed copy of the edited content) on top
+    of the seed, so a fresh server — e.g. a new Render deploy — shows the
+    same chapters, deck links and questions as the workbook."""
+    workbook = BASE_DIR / "content.xlsx"
+    if workbook.exists():
+        import excel_io  # imported here: excel_io itself imports this module
+        excel_io.import_bytes(workbook.read_bytes())
+
+
 def ensure_db():
     """Create and seed the database on first run so `flask run` just works."""
     if not Path(current_app.config["DATABASE"]).exists():
         init_db()
         seed_db()
+        load_content_workbook()
 
 
 # ---------- queries ----------
@@ -198,13 +209,14 @@ def record_attempt(chapter, kind, answers, duration_secs):
 @click.command("init-db")
 @click.option("--reset", is_flag=True, help="Delete the existing database first.")
 def init_db_command(reset):
-    """Create the tables and load the seed chapters."""
+    """Create the tables and load the seed chapters, then content.xlsx."""
     db_path = Path(current_app.config["DATABASE"])
     if reset and db_path.exists():
         close_db()
         db_path.unlink()
     init_db()
     seed_db()
+    load_content_workbook()
     click.echo(f"Database ready at {db_path}")
 
 
